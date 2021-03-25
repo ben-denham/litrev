@@ -1,0 +1,28 @@
+version: '3'
+services:
+  frontend:
+    build:
+      context: ./litrev_backend/frontend/
+    working_dir: /code
+    volumes:
+      - ./litrev_backend/frontend/:/code
+    ports:
+      - 3000:3000
+    user: node
+    command: npm start
+  backend:
+    build:
+      context: ./
+    working_dir: /code
+    volumes:
+      - ./:/code
+    ports:
+      - 5000:5000
+    environment:
+      BACKEND_HOST: '0.0.0.0'
+      BACKEND_DEBUG: 'true'
+      REDIS_URL: 'redis://redis'
+      BACKEND_CORS_ORIGIN: 'http://localhost:3000'
+    command: python litrev_backend/app.py
+  redis:
+    image: redis:5
