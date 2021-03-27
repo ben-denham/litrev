@@ -3,10 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^4.11.3",
+    "@material-ui/icons": "^4.11.2",
     "axios": "^0.19.0",
+    "fontsource-roboto": "^4.0.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-jss": "^10.0.0-alpha.25",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "1.0.x"
   },
   "devDependencies": {},
